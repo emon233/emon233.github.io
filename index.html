@@ -9,11 +9,9 @@
    One self-contained file: inline CSS + JS, Google Fonts only.
 
    THINGS TO EDIT (search for "TODO"):
-     1. CONFIG below: email, LinkedIn, X/Twitter.
-        Links marked data-cfg-href are filled in from CONFIG at
-        load time. The HTML also carries the same placeholder
-        values so the page works without JavaScript; update both
-        if you want no-JS visitors to get the real links too.
+     1. Links marked data-cfg-href are filled in from CONFIG at
+        load time. The HTML also carries the same values so the
+        page works without JavaScript; update both if needed.
      2. <link rel="canonical"> and og:url once the GitHub Pages
         or custom-domain URL is final.
      3. Optional: add an og:image (1200x630 PNG) next to this file.
@@ -25,10 +23,9 @@
   /* ====================== CONFIG (edit me) ====================== */
   window.CONFIG = {
     name:     "Md. Sazid Hossain",
-    email:    "YOUR_EMAIL@example.com",   // TODO: real email address
+    email:    "sazid.hossain.1433@gmail.com",
     github:   "https://github.com/emon233",
-    linkedin: "#",                        // TODO: e.g. https://www.linkedin.com/in/your-handle
-    x:        "#",                        // TODO: e.g. https://x.com/your-handle
+    linkedin: "https://www.linkedin.com/in/md-sazid-hossain-62724319b/",
     heroWords: ["APIs", "dApps", "SaaS", "Laravel apps"]
   };
   document.documentElement.classList.add("js");
@@ -68,7 +65,10 @@
   "jobTitle": "Full-stack & Web3 Developer",
   "worksFor": { "@type": "Organization", "name": "Grow Tech" },
   "address": { "@type": "PostalAddress", "addressLocality": "Khulna", "addressCountry": "BD" },
-  "sameAs": ["https://github.com/emon233"]
+  "sameAs": [
+    "https://github.com/emon233",
+    "https://www.linkedin.com/in/md-sazid-hossain-62724319b/"
+  ]
 }
 </script>
 
@@ -360,6 +360,7 @@ section{position:relative}
 .ic-leaf{background:linear-gradient(135deg,#3dffa8,#0f9d6b)}
 .ic-fest{background:linear-gradient(135deg,#ffc95c,#ff6a3d)}
 .ic-box{background:linear-gradient(135deg,#7b5cff,#ff5cc8)}
+.ic-vault{background:linear-gradient(135deg,#5ce1ff,#7b5cff)}
 .ic-next{background:var(--grad)}
 .status{
   font-family:var(--f-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;
@@ -394,6 +395,10 @@ section{position:relative}
 .cbtn:hover{border-color:var(--cyan);box-shadow:0 0 24px rgba(51,224,255,.18);transform:translateY(-2px)}
 .cbtn.grad{background:var(--grad);color:#05070d;border:0;box-shadow:0 8px 30px rgba(123,92,255,.35)}
 .cbtn.grad:hover{box-shadow:0 12px 40px rgba(255,92,200,.42)}
+.cbtn.is-soon{
+  opacity:.55;cursor:not-allowed;pointer-events:none;
+  color:var(--muted);border-style:dashed;border-color:var(--line-2);background:transparent;
+}
 
 /* featured card (2 columns wide) */
 .card.featured{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:28px;align-items:stretch}
@@ -854,6 +859,24 @@ section{position:relative}
           </div>
         </article>
 
+        <!-- ===== KEEPIVA ===== -->
+        <article class="card" data-tilt data-reveal>
+          <div class="card-top">
+            <div class="icon ic-vault" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="17" width="24" height="16" rx="3"/><path d="M14 17v-4a6 6 0 0 1 12 0v4"/><circle cx="20" cy="25" r="2.2" fill="#fff" stroke="none"/><path d="M20 27.2v3" opacity=".85"/></svg>
+            </div>
+            <span class="status st-amber"><i></i>Upcoming</span>
+          </div>
+          <span class="card-kicker">Personal vault app</span>
+          <h3>Keepiva</h3>
+          <p class="summary">A personal vault for warranties, subscriptions and loans/EMIs. My first mobile app build — still in planning and design, learning as I go.</p>
+          <div class="chips"><span class="chip">Mobile app</span><span class="chip">Personal finance</span></div>
+          <div class="card-foot">
+            <div class="meta"><span>Planning · 2026</span></div>
+            <span class="cbtn is-soon" aria-disabled="true">Coming soon</span>
+          </div>
+        </article>
+
         <!-- ===== YOUR PROJECT COULD BE NEXT ===== -->
         <article class="card card-next" data-tilt data-reveal>
           <div class="card-top">
@@ -910,7 +933,8 @@ section{position:relative}
             <li class="j-row"><div class="gbar" style="--c:#9d86ff;--x:40px;--w:1000px"><i class="yr">2020–23</i><b>SAJA</b><span>Journal platform + editorial admin, updated through 2023</span><i class="ring"></i></div></li>
             <li class="j-row"><div class="gbar" style="--c:#ff5cc8;--x:1150px;--w:440px"><i class="yr">2024–25</i><b>Exploring Web3</b><span>Bridges, Powerloom, chainlist, PIVX</span><i class="ring"></i></div></li>
             <li class="j-row"><div class="gbar" style="--c:#33e0ff;--x:1650px;--w:420px"><i class="yr">2026</i><b>blockchain-network</b><span>EVM + TRON wallet &amp; tx API</span><i class="ring"></i></div></li>
-            <li class="j-row"><a class="gbar gbar-cta" style="--c:#7b5cff;--x:1940px;--w:300px" href="#contact"><i class="yr">NEXT</i><b>Your project</b><span>Let's talk →</span></a></li>
+            <li class="j-row"><div class="gbar" style="--c:#ffc95c;--x:1860px;--w:400px"><i class="yr">2026</i><b>Keepiva</b><span>Now building — personal vault app</span><i class="ring"></i></div></li>
+            <li class="j-row"><a class="gbar gbar-cta" style="--c:#7b5cff;--x:2220px;--w:300px" href="#contact"><i class="yr">NEXT</i><b>Your project</b><span>Let's talk →</span></a></li>
           </ol>
         </div>
       </div>
@@ -958,17 +982,12 @@ section{position:relative}
       <span class="eyebrow">05 · Contact</span>
       <h2 class="big" id="contactTitle">Got an app to build or a chain to plug in? <em class="shimmer">Let's talk.</em></h2>
       <p class="lead">Laravel projects, admin dashboards, REST APIs or EVM / TRON integrations. Send a short note about what you need and I'll get back to you.</p>
-      <!-- TODO: replace YOUR_EMAIL@example.com with the real address (also in CONFIG at the top) -->
-      <a class="btn btn-primary pulse-btn" href="mailto:YOUR_EMAIL@example.com" data-cfg-href="email">Say hello <svg><use href="#i-arrow"/></svg></a>
-      <p class="mail-line">or write to <a href="mailto:YOUR_EMAIL@example.com" data-cfg-href="email" data-cfg-text="email">YOUR_EMAIL@example.com</a></p>
+      <a class="btn btn-primary pulse-btn" href="mailto:sazid.hossain.1433@gmail.com" data-cfg-href="email">Say hello <svg><use href="#i-arrow"/></svg></a>
+      <p class="mail-line">or write to <a href="mailto:sazid.hossain.1433@gmail.com" data-cfg-href="email" data-cfg-text="email">sazid.hossain.1433@gmail.com</a></p>
       <div class="socials">
         <a class="social" href="https://github.com/emon233" target="_blank" rel="noopener" data-cfg-href="github"><svg><use href="#i-gh"/></svg>github.com/emon233</a>
-        <!-- TODO: LinkedIn URL (set CONFIG.linkedin) -->
-        <a class="social" href="#" data-cfg-href="linkedin" target="_blank" rel="noopener">
+        <a class="social" href="https://www.linkedin.com/in/md-sazid-hossain-62724319b/" target="_blank" rel="noopener" data-cfg-href="linkedin">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4z"/></svg>LinkedIn</a>
-        <!-- TODO: X / Twitter URL (set CONFIG.x) -->
-        <a class="social" href="#" data-cfg-href="x" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.77zm-1.08 16.17h1.7L7.4 4.74H5.58z"/></svg>X / Twitter</a>
       </div>
     </div>
   </section>
@@ -990,9 +1009,8 @@ section{position:relative}
         <h4>Elsewhere</h4>
         <ul>
           <li><a href="https://github.com/emon233" target="_blank" rel="noopener" data-cfg-href="github">GitHub ↗</a></li>
-          <li><a href="#" data-cfg-href="linkedin" target="_blank" rel="noopener">LinkedIn ↗</a><!-- TODO: LinkedIn URL --></li>
-          <li><a href="#" data-cfg-href="x" target="_blank" rel="noopener">X / Twitter ↗</a><!-- TODO: X URL --></li>
-          <li><a href="mailto:YOUR_EMAIL@example.com" data-cfg-href="email">Email</a><!-- TODO: email --></li>
+          <li><a href="https://www.linkedin.com/in/md-sazid-hossain-62724319b/" target="_blank" rel="noopener" data-cfg-href="linkedin">LinkedIn ↗</a></li>
+          <li><a href="mailto:sazid.hossain.1433@gmail.com" data-cfg-href="email">Email</a></li>
         </ul>
       </div>
     </div>
