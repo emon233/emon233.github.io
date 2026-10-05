@@ -361,6 +361,9 @@ section{position:relative}
 .ic-fest{background:linear-gradient(135deg,#ffc95c,#ff6a3d)}
 .ic-box{background:linear-gradient(135deg,#7b5cff,#ff5cc8)}
 .ic-vault{background:linear-gradient(135deg,#5ce1ff,#7b5cff)}
+.ic-pos{background:linear-gradient(135deg,#33e0ff,#0f9d6b)}
+.ic-crm{background:linear-gradient(135deg,#9d86ff,#5c7cff)}
+.ic-ecom{background:linear-gradient(135deg,#ff5cc8,#7b5cff)}
 .ic-next{background:var(--grad)}
 .status{
   font-family:var(--f-mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;
@@ -395,7 +398,7 @@ section{position:relative}
 .cbtn:hover{border-color:var(--cyan);box-shadow:0 0 24px rgba(51,224,255,.18);transform:translateY(-2px)}
 .cbtn.grad{background:var(--grad);color:#05070d;border:0;box-shadow:0 8px 30px rgba(123,92,255,.35)}
 .cbtn.grad:hover{box-shadow:0 12px 40px rgba(255,92,200,.42)}
-.cbtn.is-soon{
+.cbtn.is-soon,.cbtn.is-private{
   opacity:.55;cursor:not-allowed;pointer-events:none;
   color:var(--muted);border-style:dashed;border-color:var(--line-2);background:transparent;
 }
@@ -460,10 +463,10 @@ section{position:relative}
   list-style:none;position:relative;padding:22px 0 26px;
   background:repeating-linear-gradient(90deg,rgba(120,140,255,.09) 0 1px,transparent 1px var(--col));
 }
-.j-row{position:relative;height:54px}
-.j-row+.j-row{margin-top:8px}
+.j-row{position:relative;height:46px}
+.j-row+.j-row{margin-top:6px}
 .gbar{
-  position:absolute;top:2px;left:var(--x);width:max-content;min-width:var(--w);height:48px;
+  position:absolute;top:2px;left:var(--x);width:max-content;min-width:var(--w);height:42px;
   display:flex;align-items:center;gap:12px;padding:0 12px 0 16px;border-radius:100px;white-space:nowrap;overflow:hidden;
   background:linear-gradient(100deg,var(--c),color-mix(in srgb,var(--c) 70%,#fff) 140%);
   box-shadow:0 8px 26px rgba(0,0,0,.45),0 0 24px color-mix(in srgb,var(--c) 28%,transparent);
@@ -482,8 +485,8 @@ section{position:relative}
 
 /* pinned scrub: desktop + motion allowed only (about one extra screen of scroll) */
 @media (min-width:861px) and (prefers-reduced-motion:no-preference){
-  .js .journey{height:190vh;padding-top:0}
-  .js .j-pin{position:sticky;top:0;height:100vh;min-height:600px;padding:calc(var(--header-h) + 10px) 0 20px;overflow:hidden}
+  .js .journey{height:230vh;padding-top:0}
+  .js .j-pin{position:sticky;top:0;height:100vh;min-height:640px;padding:calc(var(--header-h) + 6px) 0 16px;overflow:hidden}
   .js .gbar{opacity:.3;filter:saturate(.4)}
   .js .gbar.hit{opacity:1;filter:none;box-shadow:0 8px 26px rgba(0,0,0,.45),0 0 36px color-mix(in srgb,var(--c) 50%,transparent)}
   .js .gbar.cur{transform:scale(1.04);box-shadow:0 10px 32px rgba(0,0,0,.5),0 0 52px color-mix(in srgb,var(--c) 65%,transparent)}
@@ -722,7 +725,7 @@ section{position:relative}
   <div class="ticker" aria-label="Skills">
     <div class="ticker-track" id="tickerTrack">
       <!-- items are duplicated by JS for a seamless loop -->
-      <span>Laravel</span><span>PHP</span><span>Node.js</span><span>Express</span><span>ethers.js</span><span>viem</span><span>web3.js</span><span>TronWeb</span><span>Solidity</span><span>Hardhat</span><span>MySQL</span><span>Docker</span><span>Bootstrap</span><span>JavaScript</span>
+      <span>Laravel</span><span>PHP</span><span>Node.js</span><span>Express</span><span>Flutter</span><span>Riverpod</span><span>Supabase</span><span>Multi-tenant</span><span>Tailwind</span><span>ethers.js</span><span>viem</span><span>web3.js</span><span>TronWeb</span><span>Solidity</span><span>Hardhat</span><span>MySQL</span><span>Docker</span><span>Bootstrap</span><span>JavaScript</span>
     </div>
   </div>
 
@@ -761,7 +764,7 @@ section{position:relative}
       <div class="section-head" data-reveal>
         <span class="eyebrow">02 · Selected work</span>
         <h2 id="projectsTitle">Things I've built.</h2>
-        <p>A multi-chain API, a journal platform and two early Laravel business apps. All public on GitHub.</p>
+        <p>Public GitHub work, an upcoming personal vault app, and private Laravel apps at Grow Tech.</p>
       </div>
 
       <div class="card-grid">
@@ -865,15 +868,69 @@ section{position:relative}
             <div class="icon ic-vault" aria-hidden="true">
               <svg viewBox="0 0 40 40" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="17" width="24" height="16" rx="3"/><path d="M14 17v-4a6 6 0 0 1 12 0v4"/><circle cx="20" cy="25" r="2.2" fill="#fff" stroke="none"/><path d="M20 27.2v3" opacity=".85"/></svg>
             </div>
-            <span class="status st-amber"><i></i>Upcoming</span>
+            <span class="status st-amber"><i></i>In progress · 2026</span>
           </div>
           <span class="card-kicker">Personal vault app</span>
           <h3>Keepiva</h3>
-          <p class="summary">A personal vault for warranties, subscriptions and loans/EMIs. My first mobile app build — still in planning and design, learning as I go.</p>
-          <div class="chips"><span class="chip">Mobile app</span><span class="chip">Personal finance</span></div>
+          <p class="summary">Personal vault for warranties, subscriptions and loans/EMIs. Flutter app (Android first, iOS later) with Riverpod and go_router, Supabase backend, and a marketing site at keepiva.site. First mobile app build — still shipping phases.</p>
+          <div class="chips"><span class="chip">Flutter</span><span class="chip">Riverpod</span><span class="chip">Supabase</span><span class="chip">keepiva.site</span></div>
           <div class="card-foot">
-            <div class="meta"><span>Planning · 2026</span></div>
-            <span class="cbtn is-soon" aria-disabled="true">Coming soon</span>
+            <div class="meta"><span>Shipping phases · 2026</span></div>
+            <a class="cbtn" href="https://keepiva.site" target="_blank" rel="noopener">Visit keepiva.site <svg><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+
+        <!-- ===== ECOM MANAGER (Grow Tech · private) ===== -->
+        <article class="card" data-tilt data-reveal>
+          <div class="card-top">
+            <div class="icon ic-ecom" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h20l-1.6 14.2a3 3 0 0 1-3 2.8H14.6a3 3 0 0 1-3-2.8L10 12z"/><path d="M14 12V10a6 6 0 0 1 12 0v2"/><path d="M16 20h8M16 25h5" opacity=".85"/></svg>
+            </div>
+            <span class="status st-cyan"><i></i>Work · 2026</span>
+          </div>
+          <span class="card-kicker">Ecommerce back-office</span>
+          <h3>Ecom Manager</h3>
+          <p class="summary">Ecommerce back-office for catalog, orders, customers, inventory, shipments, and vendor purchasing. Covers fulfillment (couriers/shipments) and supply chain (POs, goods receipts, vendor bills).</p>
+          <div class="chips"><span class="chip">Laravel 13</span><span class="chip">PHP 8.3</span><span class="chip">MySQL</span><span class="chip">Blade</span><span class="chip">Vite</span><span class="chip">Tailwind 4</span></div>
+          <div class="card-foot">
+            <div class="meta"><span>At Grow Tech</span><span>Mid-2026</span></div>
+            <span class="cbtn is-private" aria-disabled="true">Private repo</span>
+          </div>
+        </article>
+
+        <!-- ===== RETAIL POS (Grow Tech · private) ===== -->
+        <article class="card" data-tilt data-reveal>
+          <div class="card-top">
+            <div class="icon ic-pos" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="8" width="26" height="20" rx="3"/><path d="M7 15h26"/><path d="M12 21h6M12 25h4" opacity=".85"/><circle cx="27" cy="23" r="2.2" fill="#fff" stroke="none"/></svg>
+            </div>
+            <span class="status st-cyan"><i></i>Work · 2026</span>
+          </div>
+          <span class="card-kicker">Multi-tenant POS</span>
+          <h3>Retail POS</h3>
+          <p class="summary">Multi-tenant point-of-sale for retail shops — checkout, sales &amp; returns, purchases, inventory, cash sessions, and expenses. Each store runs in its own tenant with role-based admin, OTP sign-in, and sales/inventory reports.</p>
+          <div class="chips"><span class="chip">Laravel 13</span><span class="chip">PHP 8.3</span><span class="chip">MySQL</span><span class="chip">Blade</span><span class="chip">Vite</span><span class="chip">Tailwind 4</span><span class="chip">Multi-tenant</span></div>
+          <div class="card-foot">
+            <div class="meta"><span>At Grow Tech</span><span>Aug 2026</span></div>
+            <span class="cbtn is-private" aria-disabled="true">Private repo</span>
+          </div>
+        </article>
+
+        <!-- ===== THREADLINE CRM (Grow Tech · private) ===== -->
+        <article class="card" data-tilt data-reveal>
+          <div class="card-top">
+            <div class="icon ic-crm" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="15" r="4"/><circle cx="26" cy="15" r="4"/><path d="M8 28c1.5-4 4.2-6 6-6s4.5 2 6 6"/><path d="M20 28c1.5-4 4.2-6 6-6s4.5 2 6 6"/><path d="M20 11v2.5" opacity=".7"/></svg>
+            </div>
+            <span class="status st-violet"><i></i>Work · 2026</span>
+          </div>
+          <span class="card-kicker">CRM admin foundation</span>
+          <h3>Threadline CRM</h3>
+          <p class="summary">CRM admin foundation with OTP auth, roles &amp; permissions, activity logging, and settings. Shared Laravel admin shell built to grow into contacts and pipelines — scaffolding so far, not a full CRM pipeline yet.</p>
+          <div class="chips"><span class="chip">Laravel 13</span><span class="chip">PHP 8.3</span><span class="chip">MySQL</span><span class="chip">Blade</span><span class="chip">Vite</span><span class="chip">Tailwind 4</span></div>
+          <div class="card-foot">
+            <div class="meta"><span>At Grow Tech</span><span>Sep 2026</span></div>
+            <span class="cbtn is-private" aria-disabled="true">Private repo</span>
           </div>
         </article>
 
@@ -916,7 +973,7 @@ section{position:relative}
         <div class="section-head">
           <span class="eyebrow">03 · Journey</span>
           <h2 id="journeyTitle">Business apps in. <span class="grad-text">Chains</span> out.</h2>
-          <p>The road so far, as my public GitHub tells it.</p>
+          <p>The road so far — public GitHub work and day-job apps at Grow Tech.</p>
         </div>
       </div>
       <p class="j-hint" aria-hidden="true">SCROLL →</p>
@@ -933,12 +990,15 @@ section{position:relative}
             <li class="j-row"><div class="gbar" style="--c:#9d86ff;--x:40px;--w:1000px"><i class="yr">2020–23</i><b>SAJA</b><span>Journal platform + editorial admin, updated through 2023</span><i class="ring"></i></div></li>
             <li class="j-row"><div class="gbar" style="--c:#ff5cc8;--x:1150px;--w:440px"><i class="yr">2024–25</i><b>Exploring Web3</b><span>Bridges, Powerloom, chainlist, PIVX</span><i class="ring"></i></div></li>
             <li class="j-row"><div class="gbar" style="--c:#33e0ff;--x:1650px;--w:420px"><i class="yr">2026</i><b>blockchain-network</b><span>EVM + TRON wallet &amp; tx API</span><i class="ring"></i></div></li>
-            <li class="j-row"><div class="gbar" style="--c:#ffc95c;--x:1860px;--w:400px"><i class="yr">2026</i><b>Keepiva</b><span>Now building — personal vault app</span><i class="ring"></i></div></li>
-            <li class="j-row"><a class="gbar gbar-cta" style="--c:#7b5cff;--x:2220px;--w:300px" href="#contact"><i class="yr">NEXT</i><b>Your project</b><span>Let's talk →</span></a></li>
+            <li class="j-row"><div class="gbar" style="--c:#ff5cc8;--x:1720px;--w:300px"><i class="yr">Mid-26</i><b>Ecom Manager</b><span>Ecommerce back-office at Grow Tech</span><i class="ring"></i></div></li>
+            <li class="j-row"><div class="gbar" style="--c:#3dffa8;--x:1800px;--w:280px"><i class="yr">Aug 26</i><b>Retail POS</b><span>Multi-tenant Laravel POS</span><i class="ring"></i></div></li>
+            <li class="j-row"><div class="gbar" style="--c:#9d86ff;--x:1860px;--w:300px"><i class="yr">Sep 26</i><b>Threadline CRM</b><span>Admin foundation (early scaffolding)</span><i class="ring"></i></div></li>
+            <li class="j-row"><div class="gbar" style="--c:#ffc95c;--x:1780px;--w:460px"><i class="yr">2026</i><b>Keepiva</b><span>Flutter + Supabase personal vault · keepiva.site</span><i class="ring"></i></div></li>
+            <li class="j-row"><a class="gbar gbar-cta" style="--c:#7b5cff;--x:2280px;--w:300px" href="#contact"><i class="yr">NEXT</i><b>Your project</b><span>Let's talk →</span></a></li>
           </ol>
         </div>
       </div>
-      <p class="j-note">Dates come from public repo activity on GitHub; private and day-job work isn't shown. <span class="mono">· NOW AT GROW TECH</span></p>
+      <p class="j-note">Public dates from GitHub; Grow Tech apps are private day-job work. <span class="mono">· NOW AT GROW TECH</span></p>
     </div>
   </section>
 
@@ -954,7 +1014,7 @@ section{position:relative}
         <div class="skill" data-reveal style="--accent:var(--cyan)">
           <div class="skill-head"><span class="si" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg></span><h3>Backend</h3></div>
           <p>APIs, data models and admin logic.</p>
-          <div class="chips"><span class="chip">PHP</span><span class="chip">Laravel</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">REST APIs</span><span class="chip">MySQL</span><span class="chip">Auth &amp; roles</span></div>
+          <div class="chips"><span class="chip">PHP</span><span class="chip">Laravel</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">REST APIs</span><span class="chip">MySQL</span><span class="chip">Supabase</span><span class="chip">Multi-tenant</span><span class="chip">Auth &amp; roles</span></div>
         </div>
         <div class="skill" data-reveal style="--accent:var(--violet);--delay:100ms">
           <div class="skill-head"><span class="si" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 7v10l8 5 8-5V7z"/><path d="m4 7 8 5 8-5M12 12v10"/></svg></span><h3>Web3</h3></div>
@@ -963,8 +1023,8 @@ section{position:relative}
         </div>
         <div class="skill" data-reveal style="--accent:var(--pink);--delay:200ms">
           <div class="skill-head"><span class="si" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 13l-2 2 2 2M15 13l2 2-2 2"/></svg></span><h3>Frontend</h3></div>
-          <p>Server-rendered pages and admin UIs.</p>
-          <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Blade</span><span class="chip">Bootstrap</span><span class="chip">jQuery</span></div>
+          <p>Server-rendered admins and a first mobile app.</p>
+          <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Blade</span><span class="chip">Tailwind</span><span class="chip">Bootstrap</span><span class="chip">Flutter</span><span class="chip">Riverpod</span></div>
         </div>
         <div class="skill" data-reveal style="--accent:var(--green);--delay:300ms">
           <div class="skill-head"><span class="si" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span><h3>Tools</h3></div>
